@@ -1,14 +1,12 @@
-# Указываем базовый образ
-FROM python:3.10-slim
+FROM node:latest
 
-# Устанавливаем рабочую директорию
-WORKDIR /app
+WORKDIR /usr/src/app
 
-# Копируем файлы приложения
-COPY . /app
+COPY package.json ./
 
-# Устанавливаем зависимости
-RUN pip install --no-cache-dir -r requirements.txt
+RUN npm install
 
-# Указываем команду запуска
-CMD ["python", "app.py"]
+COPY . .
+
+EXPOSE 4000
+CMD [ "node", "index.js" ]
