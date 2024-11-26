@@ -1,11 +1,17 @@
 {
-  "name": "dudetski",
-  "version": "1.0.0",
-  "description": "Your project description",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Hello World\""
+  "name": "node-app",
+  "description": "Nodeapp for CICD test",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.17.1"
   },
-  "author": "Your Name",
-  "license": "ISC"
+  "devDependencies": {
+    "mocha": "9.1.1",
+    "supertest": "6.1.6"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "./node_modules/.bin/mocha ./test/test.js"
+  }
 }
